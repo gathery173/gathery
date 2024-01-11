@@ -34,8 +34,12 @@
 
         <script>
             const username = localStorage.getItem('gathery_username');
-            const password = localStorage.getItem('gathery_password');
+        const password = localStorage.getItem('gathery_password');
 
+        if (!username || !password) {
+            // Redirect to index.html if credentials are not found
+            window.location.href = 'index.html';
+        }
             // Initialize Firebase
             const firebaseConfig = {
                 apiKey: "AIzaSyBooRw8q86fnSegmIk9PC9ynkbp6ODyQoE",
